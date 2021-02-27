@@ -1,0 +1,46 @@
+{
+    "name": "yelpapicraftcms/yelp-api-for-craft-cms",
+    "description": "This is a plugin for task. It is getting data from Yelp API",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "yelp api for craft cms"
+    ],
+    "support": {
+        "docs": "https://github.com/dzalev33/yelp-api-for-craft-cms/blob/master/README.md",
+        "issues": "https://github.com/dzalev33/yelp-api-for-craft-cms/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Salev",
+            "homepage": "dzalev.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "yelpapicraftcms\\yelpapiforcraftcms\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Yelp API for Craft CMS",
+        "handle": "yelp-api-for-craft-cms",
+        "developer": "Stefan Salev",
+        "developerUrl": "dzalev.com",
+        "documentationUrl": "https://github.com/dzalev33/yelp-api-for-craft-cms/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/dzalev33/yelp-api-for-craft-cms/master/CHANGELOG.md",
+        "class": "yelpapicraftcms\\yelpapiforcraftcms\\YelpApiForCraftCms"
+    }
+}
