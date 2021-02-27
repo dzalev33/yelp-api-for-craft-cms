@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Yelp API for Craft CMS plugin for Craft CMS 3.x
+ *
+ * Yelp API for Craft CMS Settings.twig
+ *
+ * @author    Stefan Salev
+ * @copyright Copyright (c) 2021 Stefan Salev
+ * @link      dzalev.com
+ * @package   YelpApiForCraftCms
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("yelpapicraftcms\\yelpapiforcraftcms\\assetbundles\\yelpapiforcraftcms\\YelpApiForCraftCmsAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}

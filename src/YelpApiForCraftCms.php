@@ -10,6 +10,7 @@
 
 namespace yelpapicraftcms\yelpapiforcraftcms;
 
+use yelpapicraftcms\yelpapiforcraftcms\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -34,6 +35,8 @@ use yii\base\Event;
  * @package   YelpApiForCraftCms
  * @since     1.0.0
  *
+ * @property  Settings $settings
+ * @method    Settings getSettings()
  */
 class YelpApiForCraftCms extends Plugin
 {
@@ -63,7 +66,7 @@ class YelpApiForCraftCms extends Plugin
      *
      * @var bool
      */
-    public $hasCpSettings = false;
+    public $hasCpSettings = true;
 
     /**
      * Set to `true` if the plugin should have its own section (main nav item) in the control panel.
@@ -151,4 +154,29 @@ class YelpApiForCraftCms extends Plugin
     // Protected Methods
     // =========================================================================
 
+    /**
+     * Creates and returns the model used to store the plugin’s settings.
+     *
+     * @return \craft\base\Model|null
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
+
+    /**
+     * Returns the rendered settings HTML, which will be inserted into the content
+     * block on the settings page.
+     *
+     * @return string The rendered settings HTML
+     */
+    protected function settingsHtml(): string
+    {
+        return Craft::$app->view->renderTemplate(
+            'yelp-api-for-craft-cms/settings',
+            [
+                'settings' => $this->getSettings()
+            ]
+        );
+    }
 }
